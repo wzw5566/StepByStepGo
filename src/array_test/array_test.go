@@ -1,6 +1,9 @@
 package array_test
 
-import "testing"
+
+import (
+	"testing"
+)
 
 func TestArrayInit(t *testing.T)  {
 
