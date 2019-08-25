@@ -32,9 +32,12 @@ func TestArrayTravel2(t *testing.T)  {
 	}
 }
 
-// 数组截取
+// 数组截取,len()方法计算循环的长度
 func TestArraySection(t *testing.T)  {
 	arr3 := [...]int{1,2,3,4,5}
 	arr3_sec := arr3[3:]
 	t.Log(arr3_sec)
+	for i := 0; i < len(arr3); i++ {
+		t.Log(arr3[i])
+	}
 }
