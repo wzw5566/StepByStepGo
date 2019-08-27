@@ -41,12 +41,3 @@ func TestTravelMap(t *testing.T) {
 	}
 }
 
-// value 是一个方法
-func TestMapWIthFuncValue(t *testing.T) {
-	//定义一个value是一个方法func(op int)，返回值是int的map
-	m := map[int]func(op int) int{}
-	m[1] = func(op int) int { return op }
-	m[2] = func(op int) int { return op * op }
-	m[3] = func(op int) int { return op * op * op }
-	t.Logf("m[1] value is %d,m[2] value is%d,m[3] value is %d", m[1](2), m[2](2), m[3](2))
-}
