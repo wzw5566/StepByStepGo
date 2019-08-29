@@ -1,4 +1,4 @@
-package map_ext
+package mapext
 
 import (
 	"testing"
