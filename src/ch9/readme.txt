@@ -7,4 +7,7 @@
 string常用的包
 
 # 1.string 包 
+
+strings.Split()
+
 # 2.strconv 包
