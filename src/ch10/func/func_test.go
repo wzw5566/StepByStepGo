@@ -23,9 +23,9 @@ func timeSpent(inner func(op int) int) func(op int) int {
 	}
 }
 
-func slowFunc(op int) int  {
-	time.Sleep(time.Second *1)
-	return op*op
+func slowFunc(op int) int {
+	time.Sleep(time.Second * 1)
+	return op
 }
 
 // 测试返回2个随机数字
@@ -36,4 +36,31 @@ func TestFunc(t *testing.T) {
 		tsSF := timeSpent(slowFunc)
 		t.Log(tsSF(10))
 	}
+}
+
+//可变参数的函数
+func Sum(ops ...int) int {
+	sum := 0
+	for _, op := range ops {
+		sum += op
+	}
+	return sum
+}
+
+// 测试可变参数函数
+func TestVarParm(t *testing.T) {
+	t.Log(Sum(1, 2, 3, 4))
+	t.Log(Sum(1, 2, 3, 4, 5))
+}
+
+func Clear()  {
+	fmt.Println("Clear resource")	
+}
+
+
+//延迟执行函数
+func TestDefer(t *testing.T)  {
+	defer Clear()
+	fmt.Println("start")
+	panic("err")
 }
